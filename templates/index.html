@@ -8,12 +8,15 @@
 <div>
     <h1 id="mainQuestion">{{value1}} x {{value2}}</h1>
     <label for="answer"></label><input id="answer">
-    <button id="enter" onclick="calc()">Enter</button>
+    <button id="enter" onclick="doNothing()">Enter</button>
 </div>
 <div id="results"></div>
 <div id="multireal" hidden>{{value1}}|{{value2}}</div>
 </body>
 <script>
+    function doNothing() {
+        document.getElementById("results").textContent = "press enter on your keyboard"
+    }
     function calc() {
         const vals = document.getElementById("multireal").textContent.split("|")
         const val1 = parseInt(vals[0])
@@ -49,7 +52,8 @@
     document.getElementById("answer").addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            document.getElementById("enter").click();
+            //document.getElementById("enter").click();
+            calc()
         }
     })
 
