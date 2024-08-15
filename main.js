@@ -12,7 +12,8 @@ const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
-camera.position.z = 5;
+camera.position.z = 2;
+camera.position.x = 0.3;
 
 function animate() {
 	renderer.render( scene, camera );
